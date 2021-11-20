@@ -2,8 +2,7 @@ import { Component } from "react";
 
 class Products extends Component{
     handleAddToCart=(product)=>{
-        console.log("trigger");
-        console.log([...this.props.productListArr, product]);
+        console.log("from-Products.js:", [...this.props.productListArr, product]);
         this.setState({
             productListArr: [...this.props.productListArr, product],
         })
