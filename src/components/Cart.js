@@ -12,9 +12,9 @@ class Cart extends Component{
     }
 
     render(){
-        let cartListItem = this.props.productListArr.map((product, price)=>{
+        let cartListItem = this.props.productListArr.map((product)=>{
             return (
-                <li>{product}: ${price.toFixed(2)}</li>
+                <li>{product.name}: ${product.price}</li>
             )
           })
 
@@ -23,7 +23,7 @@ class Cart extends Component{
                 <h2>Cart</h2>
                 <ul>
                     {cartListItem}
-                    <li>Mismatched Socks: $2.99</li>
+                    <li>--Placeholder: $2.99--</li>
                 </ul>
                 <div>
                     <h3>Subtotal: $86.03</h3>
