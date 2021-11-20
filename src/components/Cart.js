@@ -11,8 +11,10 @@ class Cart extends Component{
         }
     }
 
-    handleAddToCart=(event)=>{
-        console.log(event.target.value);
+    handleAddToCart=(product)=>{
+        this.setState({
+            productListArr: [...this.props.productListArr, product],
+        })
     }
 
     render(){

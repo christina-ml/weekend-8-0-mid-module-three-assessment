@@ -23,7 +23,10 @@ class App extends Component {
     return(
       <div className="garage-sale">
         <h2 className="title">My Garage Sale</h2>
-        <Products allProductsList={this.state.allProductsList}/>
+        <Products 
+          allProductsList={this.state.allProductsList}
+          productListArr={this.state.productListArr}
+        />
         <Cart />
         <Checkout />
       </div>
