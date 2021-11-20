@@ -11,18 +11,18 @@ class Cart extends Component{
         }
     }
 
-    handleAddToCart=(product)=>{
-        this.setState({
-            productListArr: [...this.props.productListArr, product],
-        })
-    }
-
     render(){
+        let shoppingCartArr = this.props.productListArr.map((product)=>{
+            return (
+                <li>{product.name}: ${product.price}</li>
+            )
+          })
+
         return(
             <div className="cart">
                 <h2>Cart</h2>
                 <ul>
-                    <li>Baseball Glove: $19.99</li>
+                    {shoppingCartArr}
                     <li>Mismatched Socks: $2.99</li>
                 </ul>
                 <div>

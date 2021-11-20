@@ -27,7 +27,9 @@ class App extends Component {
           allProductsList={this.state.allProductsList}
           productListArr={this.state.productListArr}
         />
-        <Cart />
+        <Cart 
+          productListArr={this.state.productListArr}
+        />
         <Checkout />
       </div>
     )
