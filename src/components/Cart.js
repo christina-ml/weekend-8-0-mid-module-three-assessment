@@ -1,9 +1,19 @@
 import { Component } from "react";
 
 class Cart extends Component{
-    // constructor(){
-    //     super()
-    // }
+    constructor(){
+        super()
+
+        this.state = {
+            subtotal: 0,
+            tax: 0,
+            total: 0,
+        }
+    }
+
+    handleAddToCart=(event)=>{
+        console.log(event.target.value);
+    }
 
     render(){
         return(

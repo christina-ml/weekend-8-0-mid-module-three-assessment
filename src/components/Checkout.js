@@ -9,7 +9,7 @@ class Checkout extends Component{
         return(
             <div className="checkout">
                 <h2>Checkout</h2>
-                <form>
+                <form id="checkout">
                     <div>
                         <label htmlFor="first-name">First Name</label><br />
                         <input type="text" placeholder="Enter First Name" />
