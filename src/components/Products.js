@@ -1,20 +1,22 @@
 import { Component } from "react";
-import Product from "./Product";
 
 class Products extends Component{
-    // constructor(){
-    //     super();
-    // }
-
     render(){
+        let productListArr = this.props.allProductsList.map((product)=>{
+            return (
+              <div className="product-card">
+                <h3>{product.name}</h3>
+                <div>Price: ${product.price.toFixed(2)}</div>
+                <button>Add To Cart</button>
+                <img src={product.img} alt={product.name} />
+                <div>{product.description}</div>
+              </div>
+            )
+          })
+
         return(
             <div className="products">
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
+                {productListArr}
             </div>
         )
     }

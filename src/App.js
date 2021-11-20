@@ -9,16 +9,21 @@ class App extends Component {
   constructor(){
     super();
 
-    this.setState = {
-      allProducts: productData,
+    this.state = {
+      allProductsList: productData,
+      productListArr: [],
     }
   }
 
   render(){
+    const { allProductsList, productListArr } = this.state;
+    console.log(allProductsList)
+    console.log(productListArr)
+
     return(
       <div className="garage-sale">
         <h2 className="title">My Garage Sale</h2>
-        <Products />
+        <Products allProductsList={this.state.allProductsList}/>
         <Cart />
         <Checkout />
       </div>

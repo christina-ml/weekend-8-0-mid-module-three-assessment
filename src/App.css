@@ -8,22 +8,18 @@
 
 .title {
     grid-area: title;
-    border: 1px solid violet;
 }
 
 .products {
     grid-area: products;
-    border: 1px solid blue;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
 .cart {
     grid-area: cart;
-    border: 1px solid red;
 }
 
 .checkout {
     grid-area: checkout;
-    border: 1px solid green;
 }
