@@ -12,9 +12,9 @@ class Cart extends Component{
     }
 
     render(){
-        let cartListItem = this.props.productListArr.map((product)=>{
+        let cartListItem = this.props.productListArr.map((product, price)=>{
             return (
-                <li>{product}: ${product.price}</li>
+                <li>{product}: ${price.toFixed(2)}</li>
             )
           })
 
