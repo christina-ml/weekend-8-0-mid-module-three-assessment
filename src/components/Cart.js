@@ -12,9 +12,9 @@ class Cart extends Component{
     }
 
     render(){
-        let shoppingCartArr = this.props.productListArr.map((product)=>{
+        let cartListItem = this.props.productListArr.map((product)=>{
             return (
-                <li>{product.name}: ${product.price}</li>
+                <li>{product}: ${product.price}</li>
             )
           })
 
@@ -22,7 +22,7 @@ class Cart extends Component{
             <div className="cart">
                 <h2>Cart</h2>
                 <ul>
-                    {shoppingCartArr}
+                    {cartListItem}
                     <li>Mismatched Socks: $2.99</li>
                 </ul>
                 <div>
