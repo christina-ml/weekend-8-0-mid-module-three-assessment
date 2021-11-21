@@ -24,11 +24,11 @@ class Checkout extends Component{
         event.preventDefault();
         const { zipCode, creditCard, firstName, lastName, email } = this.state;
 
-        console.log("fn", firstName.length)
-        console.log("ln", lastName.length)
-        console.log("em", email.length)
-        console.log("cc", creditCard.length)
-        console.log("zp", zipCode.length)
+        // console.log("fn", firstName.length)
+        // console.log("ln", lastName.length)
+        // console.log("em", email.length)
+        // console.log("cc", creditCard.length)
+        // console.log("zp", zipCode.length)
 
         if (firstName.length === 0) {
             window.alert("Input is not valid");
@@ -56,7 +56,6 @@ class Checkout extends Component{
 
 
     render(){
-        // const { firstName, lastName, email, creditCard, zipCode } = this.state;
         return(
             <div className="checkout">
                 <h2>Checkout</h2>
