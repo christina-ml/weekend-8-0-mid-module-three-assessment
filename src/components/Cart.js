@@ -1,9 +1,9 @@
 import { Component } from "react";
+import formatPrice from "../helpers/formatPrice";
 
 class Cart extends Component{
     constructor(){
-        super()
-
+        super();
         this.state = {
             subtotal: 0,
             tax: 0,
@@ -12,21 +12,19 @@ class Cart extends Component{
     }
 
     render(){
-        let cartListItem = this.props.productListArr.map((product)=>{
-            return (
-                <li>{product.name}: ${product.price}</li>
-            )
-          })
-
+        let subtotal = this.props.productListArr.reduce((total, product) => total + product.price, 0)
         return(
             <div className="cart">
                 <h2>Cart</h2>
                 <ul>
-                    {cartListItem}
-                    <li>--Placeholder: $2.99--</li>
+                    {this.props.productListArr.map((product) => (
+                        <li>
+                        {product.name}: ${product.price}{" "}
+                        </li>
+                    ))}
                 </ul>
                 <div>
-                    <h3>Subtotal: $86.03</h3>
+                    <h3>Subtotal: ${formatPrice(subtotal)}</h3>
                     <h3>Tax: $4.30</h3>
                     <h3>Total: $90.33</h3>
                 </div>

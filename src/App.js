@@ -17,8 +17,8 @@ class App extends Component {
 
   render(){
     const { allProductsList, productListArr } = this.state;
-    console.log("from-app.js:", allProductsList)
-    console.log("from-app.js:", productListArr)
+    // console.log("from-app.js:", allProductsList)
+    // console.log("from-app.js:", productListArr)
 
     return(
       <div className="garage-sale">

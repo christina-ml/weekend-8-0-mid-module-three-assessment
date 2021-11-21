@@ -2,9 +2,10 @@ import { Component } from "react";
 
 class Products extends Component{
     handleAddToCart=(product)=>{
-        console.log("from-Products.js:", [...this.props.productListArr, product]);
+        let newCart = [...this.props.productListArr];
+        newCart.push(product);
         this.setState({
-            productListArr: [...this.props.productListArr, product],
+            productListArr: newCart,
         })
     }
 
