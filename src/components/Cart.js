@@ -2,15 +2,6 @@ import { Component } from "react";
 import formatPrice from "../helpers/formatPrice";
 
 class Cart extends Component{
-    constructor(){
-        super();
-        this.state = {
-            subtotal: 0,
-            tax: 0,
-            total: 0,
-        }
-    }
-
     render(){
         console.log(this.props.cartArr);
         let subtotal = this.props.cartArr.reduce((total, product) => total + product.price, 0)
