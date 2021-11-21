@@ -11,24 +11,34 @@ class App extends Component {
 
     this.state = {
       allProductsList: productData,
-      productListArr: [],
+      cartArr: [],
     }
   }
 
+  handleAddToCart=(product)=>{
+    let newCart = [...this.state.cartArr];
+    console.log(newCart);
+    newCart.push(product);
+    this.setState({
+        cartArr: newCart,
+    })
+  }
+
   render(){
-    const { allProductsList, productListArr } = this.state;
-    // console.log("from-app.js:", allProductsList)
-    // console.log("from-app.js:", productListArr)
+    const { allProductsList, cartArr } = this.state;
+    console.log("from-app.js:", allProductsList)
+    console.log("from-app.js:", cartArr)
 
     return(
       <div className="garage-sale">
         <h2 className="title">My Garage Sale</h2>
         <Products 
+          handleAddToCart={this.handleAddToCart}
           allProductsList={this.state.allProductsList}
-          productListArr={this.state.productListArr}
+          cartArr={this.state.cartArr}
         />
         <Cart 
-          productListArr={this.state.productListArr}
+          cartArr={this.state.cartArr}
         />
         <Checkout />
       </div>

@@ -12,21 +12,22 @@ class Cart extends Component{
     }
 
     render(){
-        let subtotal = this.props.productListArr.reduce((total, product) => total + product.price, 0)
+        console.log(this.props.cartArr);
+        let subtotal = this.props.cartArr.reduce((total, product) => total + product.price, 0)
         return(
             <div className="cart">
                 <h2>Cart</h2>
                 <ul>
-                    {this.props.productListArr.map((product) => (
+                    {this.props.cartArr.map((product) => (
                         <li>
                         {product.name}: ${product.price}{" "}
                         </li>
                     ))}
                 </ul>
                 <div>
-                    <h3>Subtotal: ${formatPrice(subtotal)}</h3>
-                    <h3>Tax: $4.30</h3>
-                    <h3>Total: $90.33</h3>
+                    <h3>Subtotal: {formatPrice(subtotal)}</h3>
+                    <h3>Tax: {formatPrice(subtotal * 0.05)}</h3>
+                    <h3>Total: {formatPrice(subtotal * 1.05)}</h3>
                 </div>
             </div>
         )
