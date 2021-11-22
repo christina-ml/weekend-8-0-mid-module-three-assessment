@@ -4,7 +4,7 @@ class Products extends Component{
     render(){
         let productListArr = this.props.allProductsList.map((product)=>{
             return (
-              <div className="product-card">
+              <div className="product-card" key={product.id}>
                 <h3>{product.name}</h3>
                 <div>Price: ${product.price.toFixed(2)}</div>
                 <button type="submit" onClick={()=>this.props.handleAddToCart(product)}>Add To Cart</button>

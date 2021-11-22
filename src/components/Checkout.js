@@ -42,16 +42,16 @@ class Checkout extends Component{
             window.alert("Email is not valid");
             return;
         }
-        if (creditCard.length != 16 || isNaN(creditCard)) {
+        if (creditCard.length !== 16 || isNaN(creditCard)) {
             window.alert("Credit card number is not valid");
             return;
         }
-        if (zipCode.length != 5 || isNaN(zipCode)) {
+        if (zipCode.length !== 5 || isNaN(zipCode)) {
             window.alert("Zip code is not valid");
             return;
         }
 
-        window.alert("Purchase complete" + ` ${this.props.total}`);
+        window.alert(`Purchase complete ${this.props.total}`);
     };
 
 
@@ -61,7 +61,7 @@ class Checkout extends Component{
                 <h2>Checkout</h2>
                 <form id="checkout" onSubmit={this.handleSubmit}>
                     <div>
-                        <label for="firstName">First Name
+                        <label htmlFor="firstName">First Name
                         <input
                             type="text"
                             placeholder="First Name"
@@ -72,7 +72,7 @@ class Checkout extends Component{
                         </label>
                     </div>
                     <div>
-                        <label for="lastName">Last Name
+                        <label htmlFor="lastName">Last Name
                         <input 
                             type="text" 
                             placeholder="Last Name" 
@@ -83,7 +83,7 @@ class Checkout extends Component{
                         </label>
                     </div>
                     <div>
-                        <label for="email">Email
+                        <label htmlFor="email">Email
                         <input 
                             type="text" 
                             placeholder="Email" 
@@ -94,7 +94,7 @@ class Checkout extends Component{
                         </label>
                     </div>
                     <div>
-                        <label for="creditCard">Credit Card
+                        <label htmlFor="creditCard">Credit Card
                         <input 
                             type="text" 
                             placeholder="Credit Card" 
@@ -105,7 +105,7 @@ class Checkout extends Component{
                         </label>
                     </div>
                     <div>
-                        <label for="zipCode">Zip Code
+                        <label htmlFor="zipCode">Zip Code
                         <input 
                             type="text" 
                             placeholder="Zip Code" 

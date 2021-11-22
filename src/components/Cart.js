@@ -10,7 +10,7 @@ class Cart extends Component{
                 <h2>Cart</h2>
                 <ul>
                     {this.props.cartArr.map((product) => (
-                        <li>
+                        <li key={product.id}>
                         {product.name}: ${product.price}{" "}
                         </li>
                     ))}
