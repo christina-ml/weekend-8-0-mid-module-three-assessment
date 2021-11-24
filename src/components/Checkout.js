@@ -13,22 +13,14 @@ class Checkout extends Component{
     }
 
     handleChange=(event)=>{
-        // console.log(event.target.name)
-        // console.log(event.target.value)
         this.setState({
-            [event.target.name]: [event.target.value],
+            [event.target.name]: event.target.value,
         })
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         const { zipCode, creditCard, firstName, lastName, email } = this.state;
-
-        // console.log("fn", firstName.length)
-        // console.log("ln", lastName.length)
-        // console.log("em", email.length)
-        // console.log("cc", creditCard.length)
-        // console.log("zp", zipCode.length)
 
         if (firstName.length === 0) {
             window.alert("Input is not valid");
@@ -105,7 +97,7 @@ class Checkout extends Component{
                         </label>
                     </div>
                     <div>
-                        <label htmlFor="zipCode">Zip Code
+                        <label htmlFor="zipCode">Zip Code:  {"\t"}
                         <input 
                             type="text" 
                             placeholder="Zip Code" 
@@ -115,9 +107,7 @@ class Checkout extends Component{
                         />
                         </label>
                     </div>
-                    <div>
-                        <button type="submit">Buy Now</button>
-                    </div>
+                    <button type="submit">Buy Now</button>
                 </form>
             </div>
         )
